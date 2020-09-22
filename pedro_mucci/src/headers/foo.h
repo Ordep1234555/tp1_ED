@@ -1,14 +1,6 @@
 #ifndef __TP1_ED___
 #define __TP1_ED__
 
-//Esse header é apenas um exemplo
-
-int bar(); 
-
-#endif
-#ifndef PILHA_H
-#define PILHA_H
-
 #include <iostream>
 
 class Pilha {
@@ -25,5 +17,34 @@ class Pilha {
         static const int MAXTAM = 5000;
         int _arrayFrota[MAXTAM];
 };
+
+class Lista {
+    public:
+        ListaArranjo() : Lista() {};
+        int GetItem(int pos);
+        void SetItem(int nave, int pos);
+        void InsereFinal(int nave);
+        int RemovePosicao(int pos);
+        int Pesquisa(TipoChave c);
+        void Imprime();
+        void Limpa();
+    private:
+        static const int MAXTAM = 5000;
+        int _arrayFrota[MAXTAM];
+};
+
+class Fila {
+    public:
+        FilaArranjo();
+        void Enfileira(int nave);
+        int Desenfileira();
+        void Limpa();
+    private:
+        int frente;
+        int tras;
+        static const int MAXTAM = 5000;
+        int _arrayFrota[MAXTAM];
+};   
+
 
 #endif
