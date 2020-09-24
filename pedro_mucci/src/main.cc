@@ -1,10 +1,13 @@
 #include <cstdio> // em C substituir por #include <stdio.h>
 #include <iostream>
 #include "string.h"
-#include "headers/TAD.hpp" //um exemplo de como incluir cabeçalhos de outros arquivos criados
-#define  MAXTAM = 5000;
+#include "TAD.hpp" //um exemplo de como incluir cabeçalhos de outros arquivos criados
 
 using namespace std;
+
+Pilha Pilha;
+Lista Lista;
+Fila Fila;
 
 int main() {
   
@@ -17,25 +20,25 @@ int main() {
     Pilha.Empilha(id_nave);
   }
   
-  int operacao,aux2;
-  while(cin>>operação != EOF) {
-    if(comando ==0){
+  int operacao,aux2,pos;
+  while(cin>>operacao) {
+    if(operacao ==0){
       aux2= Pilha.Desempilha();
       Lista.InsereFinal(aux2);
-      cout << "nave " + to_string(item) + " em combate" << endl;
-    } else if (comando == -1) {
+      cout << "nave " + to_string(aux2) + " em combate" << endl;
+    } else if (operacao == -1) {
       aux2= Fila.Desenfileira();
       Pilha.Empilha(aux2);
-      cout << "nave " + to_string(item) + " consertada" << endl;      
-    } else if (comando == -2) {
-      Pilha.Imprime;
-    } else if (comando == -3) {
-      Fila.Imprime;
+      cout << "nave " + to_string(aux2) + " consertada" << endl;      
+    } else if (operacao == -2) {
+      Pilha.Imprime();
+    } else if (operacao == -3) {
+      Fila.Imprime();
     } else {
-      pos = Lista.Pesquisa(comando);
+      pos = Lista.Pesquisa(operacao);
       aux2 = Lista.RemovePosicao(pos + 1);
       Fila.Enfileira(aux2);
-      cout << "nave " + to_string(item) + " avariada" << endl;
+      cout << "nave " + to_string(aux2) + " avariada" << endl;
     }
       
   }
