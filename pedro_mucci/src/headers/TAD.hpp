@@ -1,8 +1,8 @@
 #ifndef __TAD_ED___
 #define __TAD_ED__
-#define  MAXTAM = 5000;
 #include <cstdio>
 #include <iostream>
+static const int MAXTAM = 5000;
 
 class Pilha {
     public:
@@ -19,9 +19,11 @@ class Pilha {
         int Frota[MAXTAM];
 };
 
+//-------------------------------------------------------------------------------------
+
 class Lista {
     public:
-        Lista() {tamanho=0};
+        Lista() {tamanho=0;};
         int GetTamanho() {return tamanho;};
         bool Vazia() {return tamanho == 0;};
         int GetItem(int pos);
@@ -36,9 +38,11 @@ class Lista {
         int EmCombate[MAXTAM];
 };
 
+//-------------------------------------------------------------------------------------
+
 class Fila {
     public:
-        Fila() {tamanho = 0; frente=0; tras=0};
+        Fila() {tamanho = 0; frente=0; tras=0;};
         int GetTamanho() {return tamanho;};
         bool Vazia() {return tamanho == 0;};
         void Enfileira(int nave);
