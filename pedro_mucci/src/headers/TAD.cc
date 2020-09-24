@@ -125,7 +125,7 @@ int Fila::Desenfileira(){
 
 void Fila::Imprime(){
   int aux;
-  for(aux=0;aux<tamanho;aux++){
+  for(aux=frente;aux<tras;aux++){
     cout << to_string(EmManutencao[aux]) << endl;
   }
 }
