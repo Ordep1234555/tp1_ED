@@ -1,6 +1,7 @@
 #ifndef __TAD_ED___
 #define __TAD_ED__
 #define  MAXTAM = 5000;
+#include <cstdio>
 #include <iostream>
 
 class Pilha {
