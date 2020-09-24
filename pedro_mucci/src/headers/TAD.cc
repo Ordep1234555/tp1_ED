@@ -1,7 +1,7 @@
-#include "../header/TAD.hpp"
+#include "TAD.hpp"
 #include <cstdio>
 #include <iostream>
-#define  MAXTAM = 5000;
+#include "string.h"
 
 using namespace std;
 
@@ -27,7 +27,7 @@ int Pilha::Desempilha() {
 
 void Pilha::Imprime(){
   int aux;
-  for(aux=tamanho-1; aux>=0;aux--){
+  for(aux=tamanho-1;aux>=0;aux--){
     cout << to_string(Frota[aux]) << endl;
   }
 }
@@ -36,6 +36,8 @@ void Pilha::Limpa() {
     tamanho = 0;
     topo = -1;
 }
+
+//-------------------------------------------------------------------------------------
 
 int Lista::GetItem(int pos){
   if ((pos > tamanho) || (pos <= 0)){
@@ -74,14 +76,13 @@ return i;
 }
 
 int Lista::Pesquisa(int c){
-  int i, aux;
+  int i=-1, aux;
   if (tamanho == 0){
     throw "ERRO: Lista vazia!";
   }
-  aux.SetChave(-1); // indica pesquisa sem sucesso
-  for(aux=0;aux<tamanho;aux++)
-    if(EmCombate[aux].GetChave() == c) {
-      i = EmCombate[aux];
+  for(aux=1;aux<=tamanho;aux++)
+    if(Lista::GetItem(aux) == c) {
+      i = aux-1;
       break;
   }
   return i;
@@ -89,7 +90,7 @@ int Lista::Pesquisa(int c){
 
 void Lista::Imprime(){
   int aux;
-  for(aux=0;aux<tamanho;i++){
+  for(aux=0;aux<tamanho;aux++){
     cout << to_string(EmCombate[aux]) << endl;
   }
 }
@@ -97,6 +98,8 @@ void Lista::Imprime(){
 void Lista::Limpa(){
   tamanho = 0;
 }
+
+//-------------------------------------------------------------------------------------
 
 void Fila::Enfileira(int nave){
   if (tamanho == MAXTAM){
@@ -122,7 +125,7 @@ int Fila::Desenfileira(){
 
 void Fila::Imprime(){
   int aux;
-  for(aux=0;aux<tamanho;i++){
+  for(aux=0;aux<tamanho;aux++){
     cout << to_string(EmManutencao[aux]) << endl;
   }
 }
