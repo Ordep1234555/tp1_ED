@@ -66,7 +66,7 @@ int Lista::RemovePosicao(int pos){
   if ((pos > tamanho) || (pos <= 0)){
     throw "ERRO: Posicao Invalida!";
   }
-pos--; // posição no vetor = pos-1 (vetor começa em 0)
+pos--; 
 i = EmCombate[pos];
 for(aux=pos;aux<tamanho;aux++){
   EmCombate[aux] = EmCombate[aux+1];
@@ -106,8 +106,7 @@ void Fila::Enfileira(int nave){
     throw "Fila Cheia!";
   }
   EmManutencao[tras] = nave;
-  // fila circular
-  tras = (tras + 1) % MAXTAM;
+  tras = (tras + 1) % MAXTAM; // usando aritmética modular
   tamanho++;
 }
 
@@ -117,8 +116,7 @@ int Fila::Desenfileira(){
     throw "Fila está vazia!";
   }
   aux = EmManutencao[frente];
-  // fila circular
-  frente = (frente + 1) % MAXTAM;
+  frente = (frente + 1) % MAXTAM; // usando aritmética modular
   tamanho--;
   return aux;
 }
