@@ -49,7 +49,7 @@ class Fila {
         int frente;
         int tras;
         int tamanho;
-        int _arrayFrota[MAXTAM];
+        int EmManutencao[MAXTAM];
 };   
 
 
