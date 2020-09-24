@@ -1,7 +1,7 @@
 #include <cstdio> // em C substituir por #include <stdio.h>
 #include <iostream>
 #include "string.h"
-#include "TAD.hpp" //um exemplo de como incluir cabeçalhos de outros arquivos criados
+#include "headers/TAD.hpp" //um exemplo de como incluir cabeçalhos de outros arquivos criados
 
 using namespace std;
 
