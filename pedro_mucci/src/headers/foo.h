@@ -1,48 +1,53 @@
-#ifndef __TP1_ED___
-#define __TP1_ED__
-
+#ifndef __TAD_ED___
+#define __TAD_ED__
+#define  MAXTAM = 5000;
 #include <iostream>
 
 class Pilha {
     public:
-        Pilha(){_tamanho = 0; _topo = -1;};
-        int getTamanho() {return _tamanho;};
-        bool vazia() {return _tamanho == 0;};
-        void empilha(int nave);
-        int desempilha();
-        void limpa();
+        Pilha() {tamanho = 0; topo = -1;};
+        int GetTamanho() {return tamanho;};
+        bool vazia() {return tamanho == 0;};
+        void Empilha(int nave);
+        int Desempilha();
+        void Imprime();
+        void Limpa();
     private:
-        int _tamanho;
-        int _topo;
-        static const int MAXTAM = 5000;
-        int _arrayFrota[MAXTAM];
+        int tamanho;
+        int topo;
+        int Frota[MAXTAM];
 };
 
 class Lista {
     public:
-        ListaArranjo() : Lista() {};
+        Lista() {tamanho=0};
+        int GetTamanho() {return tamanho;};
+        bool Vazia() {return tamanho == 0;};
         int GetItem(int pos);
         void SetItem(int nave, int pos);
         void InsereFinal(int nave);
         int RemovePosicao(int pos);
-        int Pesquisa(TipoChave c);
+        int Pesquisa(int c);
         void Imprime();
         void Limpa();
     private:
-        static const int MAXTAM = 5000;
-        int _arrayFrota[MAXTAM];
+        int tamanho;
+        int EmCombate[MAXTAM];
 };
 
 class Fila {
     public:
-        FilaArranjo();
+        Fila() {tamanho = 0; frente=0; tras=0};
+        int GetTamanho() {return tamanho;};
+        bool Vazia() {return tamanho == 0;};
         void Enfileira(int nave);
         int Desenfileira();
+        void Imprime();
         void Limpa();
     private:
         int frente;
         int tras;
-        static const int MAXTAM = 5000;
+        int tamanho;
         int _arrayFrota[MAXTAM];
 };   
 
